@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="97bf1e9e-3833-4daf-8cb8-3826ca0f2543" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/ginproject" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="GoDepProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="ProjectId" id="23jbmS8uF7LQqF0MvAew5X5LXNT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Database Script.console.sql">
+    <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/d5fd92f5-2682-4ac0-9add-b05259610402/console.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goproject" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Database Script.console.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="97bf1e9e-3833-4daf-8cb8-3826ca0f2543" name="Default Changelist" comment="" />
+      <created>1642250603214</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642250603214</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="https://goproxy.cn,direct" />
+      </map>
+    </environment>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2000" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646303410420">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2000" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646303410420" />
+    <state x="2139" y="320" key="EnvironmentVariablesDialog" timestamp="1646275740245">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2139" y="320" key="EnvironmentVariablesDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646275740245" />
+    <state width="1294" height="395" key="GridCell.Tab.0.bottom" timestamp="1646362142258">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1294" height="395" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362142258" />
+    <state width="1294" height="395" key="GridCell.Tab.0.center" timestamp="1646362142256">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1294" height="395" key="GridCell.Tab.0.center/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362142256" />
+    <state width="1294" height="395" key="GridCell.Tab.0.left" timestamp="1646362142255">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1294" height="395" key="GridCell.Tab.0.left/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362142255" />
+    <state width="1294" height="395" key="GridCell.Tab.0.right" timestamp="1646362142257">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1294" height="395" key="GridCell.Tab.0.right/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362142257" />
+    <state width="238" height="457" key="HiddenNamespacesPopup" timestamp="1646303537093">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="238" height="457" key="HiddenNamespacesPopup/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646303537093" />
+    <state x="1745" y="90" key="SettingsEditor" timestamp="1646275765953">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1745" y="90" key="SettingsEditor/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646275765953" />
+    <state x="229" y="98" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1642250875215" />
+    <state x="2179" y="364" width="441" height="347" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1646307878746">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2179" y="364" width="441" height="347" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646307878746" />
+    <state x="2138" y="360" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646308954398">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2138" y="360" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646308954398" />
+  </component>
+</project>
