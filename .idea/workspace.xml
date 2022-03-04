@@ -16,6 +16,7 @@
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/ginproject" />
   </component>
   <component name="GitToolBoxStore">
@@ -40,7 +41,7 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/model" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -99,30 +100,34 @@
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2139" y="320" key="EnvironmentVariablesDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646275740245" />
-    <state width="1294" height="395" key="GridCell.Tab.0.bottom" timestamp="1646362142258">
+    <state x="2213" y="445" key="Github.CreateGistDialog" timestamp="1646362908378">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1294" height="395" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362142258" />
-    <state width="1294" height="395" key="GridCell.Tab.0.center" timestamp="1646362142256">
+    <state x="2213" y="445" key="Github.CreateGistDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362908378" />
+    <state width="1878" height="384" key="GridCell.Tab.0.bottom" timestamp="1646364108041">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1294" height="395" key="GridCell.Tab.0.center/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362142256" />
-    <state width="1294" height="395" key="GridCell.Tab.0.left" timestamp="1646362142255">
+    <state width="1878" height="384" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646364108041" />
+    <state width="1878" height="384" key="GridCell.Tab.0.center" timestamp="1646364108038">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1294" height="395" key="GridCell.Tab.0.left/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362142255" />
-    <state width="1294" height="395" key="GridCell.Tab.0.right" timestamp="1646362142257">
+    <state width="1878" height="384" key="GridCell.Tab.0.center/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646364108038" />
+    <state width="1878" height="384" key="GridCell.Tab.0.left" timestamp="1646364108037">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1294" height="395" key="GridCell.Tab.0.right/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362142257" />
+    <state width="1878" height="384" key="GridCell.Tab.0.left/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646364108037" />
+    <state width="1878" height="384" key="GridCell.Tab.0.right" timestamp="1646364108039">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.0.right/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646364108039" />
     <state width="238" height="457" key="HiddenNamespacesPopup" timestamp="1646303537093">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="238" height="457" key="HiddenNamespacesPopup/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646303537093" />
-    <state x="1745" y="90" key="SettingsEditor" timestamp="1646275765953">
+    <state x="1745" y="90" key="SettingsEditor" timestamp="1646362959489">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state x="1745" y="90" key="SettingsEditor/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646275765953" />
+    <state x="1745" y="90" key="SettingsEditor/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362959489" />
     <state x="229" y="98" key="SettingsEditor/0.25.1440.875@0.25.1440.875" timestamp="1642250875215" />
     <state x="2179" y="364" width="441" height="347" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1646307878746">
       <screen x="1440" y="0" width="1920" height="1080" />

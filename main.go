@@ -56,17 +56,19 @@ func addOrder(w http.ResponseWriter, r *http.Request) {
 
 	// 先去查看商品表还有没有库存
 	var goods Goods
-	db.Where("id = ?", "1").First(&goods)
+	tx := db.Begin()
+	if err := tx.Set("gorm:query_option", "FOR UPDATE").First(&goods, 1).Error; err != nil {
+		tx.Rollback()
+		panic(err)
+	}
+	defer func() {
+		if r := recover()
+			r != nil {
+			tx.Rollback()
+		}
+	}()
 	//fmt.Printf("%+v", goods)
 	if goods.Count >0 {
-		tx := db.Begin()
-		defer func() {
-			if r := recover()
-				r != nil {
-				tx.Rollback()
-			}
-		}()
-
 		goods.Sale+=1
 		goods.Count-=1
 		//更新数据库
@@ -87,8 +89,8 @@ func addOrder(w http.ResponseWriter, r *http.Request) {
 		tx.Commit()
 		w.Write([]byte(fmt.Sprintf("the count i read is %d",goods.Count)))
 	}else{
+		tx.Rollback()
 		w.Write([]byte("我啥子都么抢到"))
-
 	}
 
 	//如果有库存插入到订单表
