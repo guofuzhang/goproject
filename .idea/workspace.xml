@@ -40,15 +40,19 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mysql-case" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/model" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.console.sql">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/d5fd92f5-2682-4ac0-9add-b05259610402/console.sql" />
       <script-mode>FILE</script-mode>
@@ -104,22 +108,22 @@
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2213" y="445" key="Github.CreateGistDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362908378" />
-    <state width="1878" height="384" key="GridCell.Tab.0.bottom" timestamp="1646364108041">
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom" timestamp="1646388113466">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="384" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646364108041" />
-    <state width="1878" height="384" key="GridCell.Tab.0.center" timestamp="1646364108038">
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646388113466" />
+    <state width="1878" height="250" key="GridCell.Tab.0.center" timestamp="1646388113464">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="384" key="GridCell.Tab.0.center/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646364108038" />
-    <state width="1878" height="384" key="GridCell.Tab.0.left" timestamp="1646364108037">
+    <state width="1878" height="250" key="GridCell.Tab.0.center/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646388113464" />
+    <state width="1878" height="250" key="GridCell.Tab.0.left" timestamp="1646388113463">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="384" key="GridCell.Tab.0.left/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646364108037" />
-    <state width="1878" height="384" key="GridCell.Tab.0.right" timestamp="1646364108039">
+    <state width="1878" height="250" key="GridCell.Tab.0.left/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646388113463" />
+    <state width="1878" height="250" key="GridCell.Tab.0.right" timestamp="1646388113464">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="384" key="GridCell.Tab.0.right/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646364108039" />
+    <state width="1878" height="250" key="GridCell.Tab.0.right/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646388113464" />
     <state width="238" height="457" key="HiddenNamespacesPopup" timestamp="1646303537093">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
@@ -133,6 +137,10 @@
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2179" y="364" width="441" height="347" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646307878746" />
+    <state x="2065" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1646381895258">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2065" y="241" width="670" height="676" key="search.everywhere.popup/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646381895258" />
     <state x="2138" y="360" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646308954398">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
