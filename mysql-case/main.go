@@ -1,4 +1,4 @@
-package mysql_case
+package main
 
 import (
 	"fmt"
@@ -18,6 +18,7 @@ type Goods struct {
 	Sale    int    `gorm:"column:sale;type:int(11);NOT NULL" json:"sale"`       // 已售
 	Version int    `gorm:"column:version;type:int(11);NOT NULL" json:"version"` // 乐观锁，版本号
 }
+
 // 订单表
 type GoodsOrder struct {
 	Id         uint      `gorm:"column:id;type:int(11) unsigned;primary_key;AUTO_INCREMENT" json:"id"`
@@ -25,6 +26,7 @@ type GoodsOrder struct {
 	Name       string    `gorm:"column:name;type:varchar(30);NOT NULL" json:"name"`                                       // 商品名称
 	CreateTime time.Time `gorm:"column:create_time;type:timestamp;default:CURRENT_TIMESTAMP;NOT NULL" json:"create_time"` // 创建时间
 }
+
 //实际表名
 func (m *GoodsOrder) TableName() string {
 	return "goods_order"
@@ -62,29 +64,28 @@ func addOrder(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer func() {
-		if r := recover()
-			r != nil {
+		if r := recover(); r != nil {
 			tx.Rollback()
 			return
 		}
 	}()
 	//fmt.Printf("%+v", goods)
-	if goods.Count >0 {
-		goods.Sale+=1
-		goods.Count-=1
-		oldVerson:=goods.Version
-		goods.Version+=1
+	if goods.Count > 0 {
+		goods.Sale += 1
+		goods.Count -= 1
+		oldVerson := goods.Version
+		goods.Version += 1
 		//更新数据库
-		column:=tx.Model(&goods).Where("version=?",oldVerson).Updates(&goods)
-		if column.RowsAffected==0 {//没有更新成功
+		column := tx.Model(&goods).Where("version=?", oldVerson).Updates(&goods)
+		if column.RowsAffected == 0 { //没有更新成功
 			tx.Rollback()
 			w.Write([]byte("我没有抢过别人"))
 			return
 		}
 
-		order:= GoodsOrder{
-			Gid: 1,
-			Name:strconv.Itoa(int(time.Now().Unix())),
+		order := GoodsOrder{
+			Gid:  1,
+			Name: strconv.Itoa(int(time.Now().Unix())),
 		}
 
 		if err := tx.Create(&order).Error; err != nil {
@@ -93,8 +94,8 @@ func addOrder(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		tx.Commit()
-		w.Write([]byte(fmt.Sprintf("the count i read is %d",goods.Count)))
-	}else{
+		w.Write([]byte(fmt.Sprintf("the count i read is %d", goods.Count)))
+	} else {
 		tx.Rollback()
 		w.Write([]byte("我啥子都么抢到"))
 	}

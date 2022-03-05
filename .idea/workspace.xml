@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97bf1e9e-3833-4daf-8cb8-3826ca0f2543" name="Default Changelist" comment="" />
+    <list default="true" id="97bf1e9e-3833-4daf-8cb8-3826ca0f2543" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql-case/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/mysql-case/main.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +24,7 @@
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/ginproject" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
@@ -40,7 +47,7 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/redis-case" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -48,14 +55,24 @@
       <recent name="$PROJECT_DIR$/mysql-case" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/redis-case" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/model" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build acurd.com/m/lua-case">
     <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/d5fd92f5-2682-4ac0-9add-b05259610402/console.sql" />
       <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="go build acurd.com/m/lua-case" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goproject" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/lua-case/main.go" />
+      <package value="acurd.com/m/lua-case" />
+      <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -68,6 +85,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build acurd.com/m/lua-case" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Database Script.console.sql" />
       </list>
@@ -108,22 +126,26 @@
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2213" y="445" key="Github.CreateGistDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646362908378" />
-    <state width="1878" height="250" key="GridCell.Tab.0.bottom" timestamp="1646388113466">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state width="1398" height="242" key="GridCell.Tab.0.bottom" timestamp="1646475399893">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1878" height="250" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646388113466" />
-    <state width="1878" height="250" key="GridCell.Tab.0.center" timestamp="1646388113464">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state width="1398" height="242" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1646475399893" />
+    <state width="1878" height="301" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646394492780" />
+    <state width="1398" height="242" key="GridCell.Tab.0.center" timestamp="1646475399891">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1878" height="250" key="GridCell.Tab.0.center/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646388113464" />
-    <state width="1878" height="250" key="GridCell.Tab.0.left" timestamp="1646388113463">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state width="1398" height="242" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1646475399891" />
+    <state width="1878" height="301" key="GridCell.Tab.0.center/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646394492778" />
+    <state width="1398" height="242" key="GridCell.Tab.0.left" timestamp="1646475399890">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1878" height="250" key="GridCell.Tab.0.left/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646388113463" />
-    <state width="1878" height="250" key="GridCell.Tab.0.right" timestamp="1646388113464">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state width="1398" height="242" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1646475399890" />
+    <state width="1878" height="301" key="GridCell.Tab.0.left/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646394492778" />
+    <state width="1398" height="242" key="GridCell.Tab.0.right" timestamp="1646475399892">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1878" height="250" key="GridCell.Tab.0.right/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646388113464" />
+    <state width="1398" height="242" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1646475399892" />
+    <state width="1878" height="301" key="GridCell.Tab.0.right/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646394492779" />
     <state width="238" height="457" key="HiddenNamespacesPopup" timestamp="1646303537093">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
@@ -141,9 +163,10 @@
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2065" y="241" width="670" height="676" key="search.everywhere.popup/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646381895258" />
-    <state x="2138" y="360" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646308954398">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="524" y="300" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646473886765">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="524" y="300" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1440.900@0.0.1440.900" timestamp="1646473886765" />
     <state x="2138" y="360" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.25.1440.875/1440.0.1920.1080@1440.0.1920.1080" timestamp="1646308954398" />
   </component>
 </project>
