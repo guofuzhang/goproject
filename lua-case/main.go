@@ -3,37 +3,91 @@ package main
 import (
 	"fmt"
 	"github.com/go-redis/redis/v8"
+	"log"
+	"net/http"
+	"sync"
 )
 
-var Client *redis.Client
+func createScript() *redis.Script {
+	script := redis.NewScript(`
+		local userId    = tostring(KEYS[1])
+		local orderSet=tostring(KEYS[2])
 
-// SCRIPT LOAD "redis.call('SET',KEYS[1],KEYS[2]);redis.call('EXPIRE',KEYS[1],KEYS[3]);return 1;"
-//EVALSHA  962e128406ab892b4fb7943255a7e1cf431c7a83 3 name jimmy 60
-var script string = `
-redis.call('SET',KEYS[1],KEYS[2])
-redis.call('EXPIRE',KEYS[1],KEYS[3])
-return 1
-`
-var luaHash string
+-- 是否已经抢购到了,如果是返回
+		local hasBuy = redis.call("sIsMember", orderSet, userId)
+		if hasBuy ~= 0 then
+		  return 0
+		end
 
-func init() {
-	Client = redis.NewClient(&redis.Options{
-		Addr: "localhost:6379",
-	})
+-- 库存的数量
+		local goodsTotal=tonumber(ARGV[1])
+		local total=redis.call("GET", goodsTotal)
 
-	luaHash, _ = Client.ScriptLoad(script).Result() //返回的脚本会产生一个sha1哈希值,下次用的时候可以直接使用这个值
-	fmt.Println(luaHash)
-	return
+-- 是否已经没有库存了,如果是返回
+		if total <= 0 then
+		  return 0
+		end
+
+-- 可以下单 
+		local flag
+
+-- 增加至订单队列
+		local orderList=tostring(ARGV[2])
+		flag = redis.call("LPUSH", orderList, userId)
+
+-- 增加至用户集合
+       flag = redis.call("SADD", orderSet, userId)
+
+-- 库存数减1
+		flag = redis.call("DECR", goodsTotal)
+-- 返回当时缓存的数量
+		return total
+	`)
+	return script
 }
 
-func useLuaHash() {
-	n, err := Client.EvalSha(luaHash, []string{"name", "jimy", "60"}).Result()
+func evalScript(client *redis.Client, userId string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	script := createScript()
+	sha, err := script.Load(client.Context(), client).Result()
 	if err != nil {
-		panic(err)
+		log.Fatalln(err)
 	}
-	fmt.Println("结果", n, err)
+	ret := client.EvalSha(client.Context(), sha, []string{
+		"hadBuyUids",
+		"goodsSurplus",
+	}, userId)
+	if result, err := ret.Result(); err != nil {
+		log.Fatalf("Execute Redis fail: %v", err.Error())
+	} else {
+		fmt.Println("")
+		fmt.Printf("userid: %s, result: %d", userId, result)
+	}
 }
 
 func main() {
-	useLuaHash()
+	http.HandleFunc("/", addOrder)
+	log.Fatal(http.ListenAndServe(":8082", nil))
+}
+
+func addOrder(w http.ResponseWriter, r *http.Request) {
+	var wg sync.WaitGroup
+	wg.Add(1)
+	client := getRedis()
+
+	defer r.Body.Close()
+	defer client.Close()
+
+	r.ParseForm()
+	uid := r.FormValue("uid")
+
+	go evalScript(client, uid, &wg)
+	wg.Wait()
+}
+
+func getRedis() *redis.Client {
+	client := redis.NewClient(&redis.Options{
+		Addr: "127.0.0.1:6379",
+	})
+	return client
 }
