@@ -3,57 +3,31 @@ package main
 import (
 	"fmt"
 	"github.com/go-redis/redis/v8"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"sync"
 )
 
-const orderSet = "orderSet"    //用户id的集合
-const goodsTotal = "goodTotal" //商品库存的key
-const orderList = "orderList"  //订单队列
+const orderSet = "orderSet"     //用户id的集合
+const goodsTotal = "goodsTotal" //商品库存的key
+const orderList = "orderList"   //订单队列
 func createScript() *redis.Script {
-	script := redis.NewScript(`
-		local userId    = tostring(KEYS[1])
-		local orderSet=tostring(KEYS[2])
-
--- 是否已经抢购到了,如果是返回
-		local hasBuy = redis.call("sIsMember", orderSet, userId)
-		if hasBuy ~= 0 then
-		  return 0
-		end
-
--- 库存的数量
-		local goodsTotal=tonumber(ARGV[1])
-		local total=redis.call("GET", goodsTotal)
-
--- 是否已经没有库存了,如果是返回
-		if total <= 0 then
-		  return 0
-		end
-
--- 可以下单 
-		local flag
-
--- 增加至订单队列
-		local orderList=tostring(ARGV[2])
-		flag = redis.call("LPUSH", orderList, userId)
-
--- 增加至用户集合
-       flag = redis.call("SADD", orderSet, userId)
-
--- 库存数减1
-		flag = redis.call("DECR", goodsTotal)
--- 返回当时缓存的数量
-		return total
-	`)
+	str, err := ioutil.ReadFile("./lua-case/script.lua")
+	if err != nil {
+		fmt.Println("Script read error", err)
+		log.Println(err)
+	}
+	scriptStr := fmt.Sprintf("%s", str)
+	script := redis.NewScript(scriptStr)
 	return script
 }
 
 func evalScript(client *redis.Client, userId string, wg *sync.WaitGroup) {
 	defer wg.Done()
 	script := createScript()
-	fmt.Printf("the script is %+v", script)
-	return
+	//fmt.Printf("%+v",script)
+	//return
 	sha, err := script.Load(client.Context(), client).Result()
 	if err != nil {
 		log.Fatalln(err)

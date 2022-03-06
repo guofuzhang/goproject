@@ -8,7 +8,7 @@ local goodsTotal=tostring(ARGV[1])
 local orderList=tostring(ARGV[2])
 
 -- 是否已经抢购到了,如果是返回
-local hasBuy = redis.call("sIsMember", orderSet, userId)
+local hasBuy = tonumber(redis.call("sIsMember", orderSet, userId))
 if hasBuy ~= 0 then
     return 0
 end
@@ -16,7 +16,6 @@ end
 -- 库存的数量
 local total=tonumber(redis.call("GET", goodsTotal))
 --return total
-
 -- 是否已经没有库存了,如果是返回
 if total <= 0 then
     return 0
@@ -37,5 +36,7 @@ flag = redis.call("DECR", goodsTotal)
 return total
 
 --[[
+
+
 --  多行注释
 ]]
