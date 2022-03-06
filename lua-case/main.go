@@ -8,6 +8,9 @@ import (
 	"sync"
 )
 
+const orderSet = "orderSet"    //用户id的集合
+const goodsTotal = "goodTotal" //商品库存的key
+const orderList = "orderList"  //订单队列
 func createScript() *redis.Script {
 	script := redis.NewScript(`
 		local userId    = tostring(KEYS[1])
@@ -49,14 +52,19 @@ func createScript() *redis.Script {
 func evalScript(client *redis.Client, userId string, wg *sync.WaitGroup) {
 	defer wg.Done()
 	script := createScript()
+	fmt.Printf("the script is %+v", script)
+	return
 	sha, err := script.Load(client.Context(), client).Result()
 	if err != nil {
 		log.Fatalln(err)
 	}
 	ret := client.EvalSha(client.Context(), sha, []string{
-		"hadBuyUids",
-		"goodsSurplus",
-	}, userId)
+		userId,
+		orderSet,
+	}, []string{
+		goodsTotal,
+		orderList,
+	})
 	if result, err := ret.Result(); err != nil {
 		log.Fatalf("Execute Redis fail: %v", err.Error())
 	} else {
