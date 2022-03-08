@@ -42,8 +42,13 @@ func evalScript(client *redis.Client, userId string, wg *sync.WaitGroup) {
 	if result, err := ret.Result(); err != nil {
 		log.Fatalf("Execute Redis fail: %v", err.Error())
 	} else {
-		fmt.Println("")
-		fmt.Printf("userid: %s, result: %d", userId, result)
+		total:=result.(int64)
+		if total==0{
+			fmt.Printf("userid: %s, 什么都没抢到 \n", userId)
+		}else{
+			fmt.Printf("userid: %s 抢到了, 库存: %d \n", userId, total)
+
+		}
 	}
 }
 
