@@ -1,48 +1,16 @@
-<html>
+<!doctype html>
+<html lang="en" content="wwwww">
 <head>
-    <meta charset="utf-8" />
-    <title>sql注入</title>
-    <style>
-        form{
-            width: 30vw;
-            height: 30vh;
-            min-height: 300px;
-            margin: 10vh auto;
-            border: 1px solid;
-            border-radius: 4px;
-        }
-        form .username,.password{
-            display: block;
-            float: right;
-        }
-        div {
-            width: 300px;
-            height: 80px;
-            margin: 30px auto 0;
-        }
-        input label {
-            float: left;
-            display: inline-block;
-        }
-        input {
-            height: 30px;
-        }
-        .button {
-            width: 100px;
-            margin: auto;
-            clear: both;
-            display: block;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 </head>
 <body>
-<form action="/article" method="get">
-    <div>
-        <label>标题: </label>
-        <input class="username" type="text" name="title">
-    </div>
-    <input class="button" type="submit" value="查询">
-    <p>搜索结果:{{.}}</p>
-</form>
+<h4>{{.Title}}</h4>
+<p>{{.Detail}}</p>
+
+&lt;img src=&quot;pic.gif&quot; onerror=&quot;alert(&#39;请点击图片查看&#39;)&quot; alt=&quot;点击可查看&quot; title=&quot;点击可查看&quot; onclick=&quot;alert(&#39;叫点就点，你也是有蛮乖的！&#39;)&quot;&gt;
 </body>
 </html>
