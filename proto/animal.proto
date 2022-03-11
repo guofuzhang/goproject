@@ -1,0 +1,30 @@
+syntax = "proto3";
+option  go_package = "/Users/zhangguofu/website/goproject/proto/gen/go;prt";
+//定义Animal服务
+service Animal{
+  //定义方法
+  rpc Name(NameRequest) returns (NameResponce){}
+  rpc Food(FoodRequest) returns (FoodResponce){}
+}
+
+//请求体结构
+message NameRequest{
+  string name=1;
+}
+
+//响应体结构
+message NameResponce{
+  string message=1;
+}
+
+
+//请求体结构
+message FoodRequest{
+  string name=1;
+}
+
+//响应体结构
+message FoodResponce{
+  string message=1;
+}
+
