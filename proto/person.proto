@@ -1,0 +1,9 @@
+//我们定义一个人的数据结构,
+syntax="proto3";
+package person;
+option  go_package="/Users/zhangguofu/website/goproject/proto/gen/go;person";
+message Person{
+//  1 和2 是说第一个字段是name 第二个字段是age,为了方便后面解析二进制流
+  string  name=1;
+  int64 age=2;
+}
