@@ -9,7 +9,7 @@
 
 //package，即包名声明符是可选的，用来防止不同的消息类型有命名冲突。比如两个包有两个Person
 
-package prt
+package person
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

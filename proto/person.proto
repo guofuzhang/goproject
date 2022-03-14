@@ -4,7 +4,7 @@ syntax = "proto3";
 //package，即包名声明符是可选的，用来防止不同的消息类型有命名冲突。比如两个包有两个Person
 package person;
 //生成go文件的地址和包名
-option  go_package = "/Users/zhangguofu/website/goproject/proto/gen/go;prt";
+option  go_package = "/Users/zhangguofu/website/goproject/proto/gen/go;person";
 
 //    消息类型 使用 message 关键字定义 Person是类型名,name age 算是该类型的组成元素,
 // 一个 .proto 文件中可以写多个消息类型，即对应多个结构体(struct)。
