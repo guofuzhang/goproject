@@ -1,6 +1,6 @@
 module acurd.com/m
 
-go 1.14
+go 1.16
 
 require (
 	github.com/go-redis/redis v6.15.9+incompatible
@@ -13,6 +13,7 @@ require (
 	github.com/onsi/ginkgo v1.16.5 // indirect
 	github.com/onsi/gomega v1.18.1 // indirect
 	github.com/satori/go.uuid v1.2.0
+	golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd // indirect
 	google.golang.org/grpc v1.44.0
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0 // indirect
 	google.golang.org/protobuf v1.27.1
