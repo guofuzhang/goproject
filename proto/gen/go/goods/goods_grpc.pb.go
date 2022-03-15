@@ -55,17 +55,16 @@ func (c *goodsInfoClient) GetGoods(ctx context.Context, in *GoodsId, opts ...grp
 }
 
 // GoodsInfoServer is the server API for GoodsInfo service.
-// All implementations must embed UnimplementedGoodsInfoServer
+// All implementations should embed UnimplementedGoodsInfoServer
 // for forward compatibility
 type GoodsInfoServer interface {
 	//一个添加商品
 	AddGoods(context.Context, *Goods) (*GoodsId, error)
 	//一个获取商品
 	GetGoods(context.Context, *GoodsId) (*Goods, error)
-	mustEmbedUnimplementedGoodsInfoServer()
 }
 
-// UnimplementedGoodsInfoServer must be embedded to have forward compatible implementations.
+// UnimplementedGoodsInfoServer should be embedded to have forward compatible implementations.
 type UnimplementedGoodsInfoServer struct {
 }
 
@@ -75,7 +74,6 @@ func (UnimplementedGoodsInfoServer) AddGoods(context.Context, *Goods) (*GoodsId,
 func (UnimplementedGoodsInfoServer) GetGoods(context.Context, *GoodsId) (*Goods, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoods not implemented")
 }
-func (UnimplementedGoodsInfoServer) mustEmbedUnimplementedGoodsInfoServer() {}
 
 // UnsafeGoodsInfoServer may be embedded to opt out of forward compatibility for this service.
 // Use of this interface is not recommended, as added methods to GoodsInfoServer will

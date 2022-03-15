@@ -3,38 +3,62 @@ package main
 import (
 	"acurd.com/m/proto/gen/go/goods"
 	"context"
-	"fmt"
+	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
 	uuid "github.com/satori/go.uuid"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/grpclog"
 	"log"
 	"net"
 )
 
 const (
-	Port = ":9988"
+	Adress = "localhost:9988"
 )
 
 type Server struct {
+	goods.UnimplementedGoodsInfoServer
 }
 
-var server Server
+func (s Server) AddGoods(ctx context.Context, g *goods.Goods) (*goods.GoodsId, error) {
+	//参数校验忽略
+	db, err := sql.Open("mysql", "acurd:acurd@tcp(127.0.0.1:3306)/test")
+	if err != nil {
+		grpclog.Fatal(err)
+	}
+	defer db.Close()
 
-func (receiver *Server) mustEmbedUnimplementedGoodsInfoServer() {
-	panic("implement me")
-}
+	getUUID := GetUUID()
+	name := g.Name
+	desc := g.Desc
+	sqlStr := "INSERT INTO an_goods (`id`,`name`,`desc`) VALUES (?,?,?)"
+	_, err = db.Exec(sqlStr, getUUID, name, desc)
+	if err != nil {
+		grpclog.Fatal(err)
+	}
 
-//添加商品
-func (receiver *Server) AddGoods(ctx context.Context, req *goods.Goods) (resp *goods.GoodsId) {
 	goodsId := goods.GoodsId{}
-	goodsId.Value = GetUUID()
-	return &goodsId
+	goodsId.Value = getUUID
+
+	log.Printf("add success ,the id is %s", getUUID)
+	return &goodsId, nil
 }
 
-//获取商品
-func (receiver *Server) GetGoods(ctx context.Context, req *goods.Goods) (resp *goods.GoodsId) {
-	goodsId := goods.GoodsId{}
-	goodsId.Value = GetUUID()
-	return &goodsId
+func (s Server) GetGoods(ctx context.Context, id *goods.GoodsId) (*goods.Goods, error) {
+
+	db, err := sql.Open("mysql", "acurd:acurd@tcp(127.0.0.1:3306)/test")
+	if err != nil {
+		grpclog.Fatal(err)
+	}
+	defer db.Close()
+
+	search_id := id.Value
+	g := goods.Goods{}
+
+	sqlStr := "SELECT `id`,`name`,`desc` FROM an_goods WHERE id=?"
+	err = db.QueryRow(sqlStr, search_id).Scan(&g.Id, &g.Name, &g.Desc)
+
+	return &g, nil
 }
 
 func GetUUID() string {
@@ -42,14 +66,21 @@ func GetUUID() string {
 	return u2.String()
 }
 
+var server Server
+
 func main() {
-	listener, err := net.Listen("tcp", Port)
+	//绑定监听端口
+	listener, err := net.Listen("tcp", Adress)
 	if err != nil {
 		log.Println("net listen err ", err)
 		return
 	}
+	//创建grpc服务
 	s := grpc.NewServer()
-	goods.RegisterGoodsInfoServer(s, server)
+	//开始grpc监听
+	goods.RegisterGoodsInfoServer(s, &server)
+	log.Println("start gRPC listen on Adress " + Adress)
+
 	if err := s.Serve(listener); err != nil {
 		log.Println("failed to serve...", err)
 		return
